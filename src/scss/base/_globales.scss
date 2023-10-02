@@ -1,0 +1,120 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: v.$fuente_principal;
+
+    font-size: 1.6rem;
+}
+
+p {
+    color: v.$negro;
+    font-size: 2rem;
+    line-height: 2;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 2rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+    display: inline-block;
+
+}
+
+h2::after {
+    content: '';
+    background-color: v.$primario;
+    width: 102%;
+    height: 5px;
+    display: block;
+    margin-top: -1.4rem;
+}
+
+.modificadorLinea::after {
+    background-color: v.$blanco;
+    content: '';
+    width: 102%;
+    height: 5px;
+    display: block;
+    margin-top: -1.4rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.espacio {
+    margin: 7rem 0;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.imagen {
+    animation-name: saltar;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes saltar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

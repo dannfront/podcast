@@ -1,0 +1,41 @@
+@use"../base/variables" as v;
+@use"../base/mixins" as m;
+//../img/icono_negocio.svg
+.header{
+    background-image: linear-gradient(v.$secundarioOpacity 0%,v.$secundarioOpacity 100%),url(../img/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:60%;
+    &__contenido{
+
+        padding: 5rem 0;
+    }
+    &__logo{
+        width: 20rem;
+        margin: 0 auto;
+        @include m.tablet{
+            margin: 0;
+        } 
+    }
+    
+}
+
+.eslogan{
+    padding: 10rem 0;
+    &__texto{
+        color: v.$blanco;
+        margin: 0;
+        margin-bottom: 3rem;
+        font-size: 4.5rem;
+        @include m.tablet{
+            font-size: 6rem;
+            max-width: 50%
+        }
+        @include m.desktop { 
+            max-width: 40%;
+        }
+    }
+    &__btn{
+        @include m.boton(v.$primario,v.$secundario);
+    }
+}

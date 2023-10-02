@@ -1,0 +1,36 @@
+@use'../base/variables' as v;
+@use'../base/mixins' as m;
+
+
+.alcance{
+    background-color: v.$primario;
+    padding: 3rem 0;
+    &__heading{
+        color: v.$secundario;
+    }
+    &__contenido{
+        text-align: left
+    }
+    &__grid{
+        @include m.tablet{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+            gap: 3rem;
+        }
+    }
+    &__heading{
+        margin: 5rem 0 0 0;
+        @include m.tablet { 
+            font-size: 3.6rem;
+        }
+    }
+    &__img{
+        transition-property: transform;
+        transition-duration: 300ms;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
